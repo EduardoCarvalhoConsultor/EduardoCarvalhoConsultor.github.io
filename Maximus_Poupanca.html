@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Maximus Poupança 3.ª Série — Explicação Simples</title>
+<style>
+  :root{--bg:#fcfcfd;--ink:#26323f;--muted:#5d6a74;--brand:#4a7ca6;--brand-strong:#2f678f;--pastel-1:#eef5ff;--pastel-2:#e9f7f1;--pastel-3:#fff3e6;--pastel-4:#f1efff;--accent:#ffb86b;--border:#e7ecf1}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;line-height:1.6}
+  .wrap{max-width:980px;margin:0 auto;padding:24px}
+  header{background:linear-gradient(135deg,var(--pastel-1),var(--pastel-2));border-bottom:1px solid var(--border)}
+  header .wrap{padding:40px 24px}
+  h1{margin:0;font-size:1.9rem;color:var(--brand-strong)}
+  .subtitle{color:var(--muted);margin-top:6px}
+  .badge{display:inline-block;background:#ffffffd9;border:1px solid var(--border);padding:6px 10px;border-radius:999px;font-size:.9rem;margin-top:12px}
+  .section{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;margin:18px 0;box-shadow:0 1px 0 #f6f8fa}
+  .section h2{margin-top:0;color:var(--brand-strong)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .card{background:var(--pastel-1);border:1px solid var(--border);border-radius:10px;padding:14px}
+  .steps{counter-reset:step}
+  .step{position:relative;padding-left:44px;margin:14px 0}
+  .step:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--pastel-4);border:1px solid var(--border);color:var(--brand-strong);display:grid;place-items:center;font-weight:600}
+  .note{background:var(--pastel-3);border-left:4px solid var(--accent);padding:12px;border-radius:6px}
+  .faq details{background:var(--pastel-1);border:1px solid var(--border);border-radius:8px;padding:12px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:600}
+  .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+  .btn{background:var(--brand);color:#fff;border:none;border-radius:8px;padding:12px 16px;font-weight:600;text-decoration:none;display:inline-block}
+  .btn:hover{background:var(--brand-strong)}
+  .btn.secondary{background:#fff;color:var(--brand-strong);border:1px solid var(--brand)}
+  footer{color:var(--muted);font-size:.9rem;margin:24px 0}
+  .contact{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .chip{background:#fff;border:1px solid var(--border);border-radius:999px;padding:8px 12px}
+  a{color:var(--brand-strong)}
+
+.feature-box {border:1px solid var(--border);border-radius:12px;padding:18px 16px;background:#ffffff;display:flex;align-items:flex-start;gap:12px;box-shadow:0 2px 4px rgba(0,0,0,0.04);transition:transform .15s ease, box-shadow .15s ease;}
+.feature-box:hover {transform:translateY(-3px);box-shadow:0 6px 12px rgba(0,0,0,0.08);}
+.feature-icon {font-size:1.6rem;color:var(--brand-strong);flex-shrink:0;}
+.feature-title {font-weight:700;font-size:1.05rem;color:var(--brand-strong);} 
+.feature-text {margin-top:4px;color:var(--muted);font-size:.92rem;}
+.feature-box{border:1px solid var(--border);border-radius:14px;padding:20px;background:linear-gradient(135deg,#ffffff,var(--pastel-1));display:flex;align-items:flex-start;gap:14px;box-shadow:0 3px 6px rgba(0,0,0,0.06);transition:transform .2s ease, box-shadow .2s ease;}
+.feature-box:hover{transform:translateY(-4px);box-shadow:0 10px 20px rgba(0,0,0,0.12);} 
+.feature-icon{width:40px;height:40px;flex-shrink:0;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--pastel-4);font-size:1.4rem;color:var(--brand-strong);} 
+.feature-title{font-weight:700;font-size:1.1rem;color:var(--brand-strong);} 
+.feature-text{margin-top:6px;color:var(--muted);font-size:.92rem;} 
+.feature-meter{margin-top:6px;height:6px;border-radius:4px;background:#e6e6e6;overflow:hidden;} 
+.feature-meter span{display:block;height:100%;background:var(--brand-strong);} 
+
+@media (max-width: 640px) {
+  .wrap{padding:18px}
+  header .wrap{padding:28px 18px}
+  h1{font-size:1.5rem}
+  .subtitle{font-size:.96rem}
+  .badge{font-size:.85rem}
+  .section{padding:16px;margin:14px 0}
+  .grid{grid-template-columns:1fr;gap:12px}
+  .feature-box{padding:16px;gap:12px}
+  .feature-icon{width:36px;height:36px;font-size:1.25rem;border-radius:9px}
+  .feature-title{font-size:1.02rem}
+  .feature-text{font-size:.93rem}
+  .feature-meter{height:5px}
+  .step{padding-left:40px}
+  .step:before{width:26px;height:26px;font-size:.9rem}
+  .btn{width:100%; text-align:center}
+  .cta{gap:8px}
+  .chip{padding:7px 10px}
+  iframe[title="FAQs"]{height:60vh}
+}
+@media (max-width: 360px) {
+  h1{font-size:1.35rem}
+  .feature-icon{width:32px;height:32px}
+}
+@media (prefers-reduced-motion: reduce) { *{transition:none !important} }
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<h1>Maximus Poupança 3.ª Série</h1>
+<p class="subtitle">Poupança simples e segura — explicado em linguagem clara.</p>
+<span class="badge">Capital garantido • Baixo risco (2/7) • Duração: 8 anos e 1 dia • Subscrição a partir de 19/01/2026</span>
+</div>
+</header>
+<main class="wrap">
+<section class="section">
+<h2>O que é?</h2>
+<p>É um <strong>seguro de vida de poupança</strong> pensado para quem quer fazer crescer o dinheiro com <strong>segurança</strong>. No final do prazo, recebe o <strong>capital investido</strong> (líquido do encargo de 1% por cada entrega), acrescido das eventuais <strong>participações nos resultados</strong> atribuídas pela seguradora.</p>
+<div class="grid">
+<div class="feature-box"><div class="feature-icon">⚖️</div><div><div class="feature-title">Risco baixo (2/7)</div><div class="feature-meter"><span style="width:28%;"></span></div><div class="feature-text">Estabilidade e menor volatilidade.</div></div></div>
+<div class="feature-box"><div class="feature-icon">📈</div><div><div class="feature-title">Taxa 2026: 1,75%</div><div class="feature-meter"><span style="width:60%;"></span></div><div class="feature-text">Remuneração garantida no 1.º ano.</div></div></div>
+<div class="feature-box"><div class="feature-icon">💼</div><div><div class="feature-title">Fiscalidade vantajosa</div><div class="feature-meter"><span style="width:80%;"></span></div><div class="feature-text">Taxa reduzida segundo a lei em vigor.</div></div></div>
+<div class="feature-box"><div class="feature-icon">🔄</div><div><div class="feature-title">Flexibilidade</div><div class="feature-meter"><span style="width:50%;"></span></div><div class="feature-text">Reforços a partir de 100€ e resgates.</div></div></div>
+</div>
+</section>
+<section class="section">
+<h2>Como funciona (passo a passo)</h2>
+<div class="steps">
+<div class="step"><strong>1. Escolha o valor inicial</strong><br/>Mínimo de <strong>1.000€</strong>. Pode fazer reforços a partir de <strong>100€</strong> sempre que quiser.</div>
+<div class="step"><strong>2. Mantenha a poupança a decorrer</strong><br/>Duração recomendada de <strong>8 anos e 1 dia</strong> para aproveitar a <strong>fiscalidade</strong> mais favorável.</div>
+<div class="step"><strong>3. Precisa de dinheiro antes do fim?</strong><br/>Pode <strong>resgatar total ou parcialmente</strong>. Existem <strong>penalizações</strong> até à <strong>3.ª anuidade</strong>. Após o resgate parcial, a conta deve manter pelo menos <strong>250€</strong>.</div>
+<div class="step"><strong>4. No final</strong><br/>Recebe o <strong>valor investido</strong> (líquido do encargo de 1% por prémio), deduzidos eventuais resgates, e <strong>acrescido das participações nos resultados</strong> atribuídas.</div>
+</div>
+<p class="note"><strong>Nota de transparência:</strong> As penalizações só se aplicam quando há resgates nos primeiros 3 anos. A partir daí, tem maior liberdade, mantendo sempre as condições do produto.</p>
+</section>
+<section class="section">
+<h2>Para quem é?</h2>
+<ul>
+<li>Clientes com <strong>18 anos</strong> ou mais (Pessoa Segura pode ter entre <strong>14</strong> e <strong>98 anos</strong> no vencimento).</li>
+<li>Quem privilegia <strong>segurança e previsibilidade</strong> ao invés de altas oscilações.</li>
+<li>Quem pretende <strong>benefícios fiscais</strong> mantendo o investimento até ao final.</li>
+</ul>
+</section>
+<section class="section">
+<h2>Fale com o seu consultor</h2>
+<p>Tem dúvidas? Fale comigo: terei todo o gosto em ajudar a decidir com confiança.</p>
+<div class="contact">
+<span class="chip">Eduardo Carvalho — Consultor Exclusivo Ageas</span>
+<span class="chip">eduardo.carvalho@private.ageas.pt</span>
+<span class="chip">+351 913 238 126</span>
+</div>
+<div class="cta">
+<a class="btn" href="mailto:eduardo.carvalho@private.ageas.pt?subject=MAXIMUS%20POUPAN%C3%87A%203%C2%AA.%20S%C3%A9rie&amp;body=Ol%C3%A1!%20Eduardo%20Carvalho%20%20Pretendo%20ser%20contactado%20para%20falarmos%20sobre%20este%20produto." rel="nofollow">Quero ser contactado</a>
+<a class="secondary btn open-faq" href="#" id="show-faq-iframe">Ver perguntas frequentes</a>
+</div><div id="faq-frame-wrap" style="display:none; margin-top:14px;"><div style="display:flex; justify-content:flex-end; gap:8px; margin-bottom:8px;"><button class="btn secondary" id="close-faq-iframe">Fechar FAQs</button></div><iframe srcdoc="&lt;!doctype html&gt; &lt;html lang='pt-PT'&gt; &lt;head&gt;   &lt;meta charset='utf-8'&gt;   &lt;meta name='viewport' content='width=device-width, initial-scale=1'&gt;   &lt;style&gt;     body{font-family: system-ui,-apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial; line-height:1.6; margin:0; padding:16px; background:#fff; color:#26323f;}     h2{margin-top:0; color:#2f678f;}     details{background:#eef5ff; border:1px solid #e7ecf1; border-radius:8px; padding:12px; margin:10px 0;}     summary{cursor:pointer; font-weight:600;}     a{color:#2f678f;}   &lt;/style&gt; &lt;/head&gt; &lt;body&gt;   &lt;h2&gt;Perguntas frequentes&lt;/h2&gt;   &lt;details&gt; &lt;summary&gt;O meu dinheiro está seguro?&lt;/summary&gt; &lt;p&gt;O produto garante o &lt;strong&gt;capital investido&lt;/strong&gt; (líquido de 1% de encargo sobre cada entrega). É indicado para perfis conservadores que querem &lt;strong&gt;baixa volatilidade&lt;/strong&gt;.&lt;/p&gt; &lt;/details&gt; &lt;details&gt; &lt;summary&gt;Posso reforçar a qualquer momento?&lt;/summary&gt; &lt;p&gt;Sim. Pode fazer &lt;strong&gt;reforços a partir de 100€&lt;/strong&gt; ao longo do contrato.&lt;/p&gt; &lt;/details&gt; &lt;details&gt; &lt;summary&gt;E se precisar do dinheiro antes do prazo?&lt;/summary&gt; &lt;p&gt;É possível &lt;strong&gt;resgatar total ou parcialmente&lt;/strong&gt;. Podem existir &lt;strong&gt;penalizações até à 3.ª anuidade&lt;/strong&gt;. Após um resgate parcial, deve manter-se um &lt;strong&gt;saldo mínimo de 250€&lt;/strong&gt;.&lt;/p&gt; &lt;/details&gt; &lt;details&gt; &lt;summary&gt;Qual é o prazo?&lt;/summary&gt; &lt;p&gt;&lt;strong&gt;8 anos e 1 dia.&lt;/strong&gt; Este prazo permite, segundo a lei atual, uma &lt;strong&gt;tributação mais reduzida&lt;/strong&gt; sobre os rendimentos na maturidade.&lt;/p&gt; &lt;/details&gt; &lt;details&gt; &lt;summary&gt;Quando posso subscrever?&lt;/summary&gt; &lt;p&gt;A partir de &lt;strong&gt;19/01/2026&lt;/strong&gt;.&lt;/p&gt; &lt;/details&gt; &lt;details&gt; &lt;summary&gt;Qual é a taxa no primeiro ano?&lt;/summary&gt; &lt;p&gt;&lt;strong&gt;1,75% em 2026&lt;/strong&gt; sobre o valor investido.&lt;/p&gt; &lt;/details&gt; &lt;/body&gt; &lt;/html&gt;" style="width:100%; height:70vh; border:1px solid var(--border); border-radius:8px; background:#fff;" title="FAQs"></iframe></div>
+</section>
+<footer>
+<p>Informação de produto baseada na monofolha "Maximus Poupança 3.ª Série". Este documento é um <strong>resumo informativo</strong> e não dispensa a leitura das <strong>condições contratuais</strong> e informação pré-contratual. A tributação (11,2%) refere-se ao regime em vigor à data e pode sofrer alterações legislativas.</p>
+</footer>
+</main>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const wrap = document.getElementById('faq-frame-wrap');
+    const btnClose = document.getElementById('close-faq-iframe');
+    const openBtns = document.querySelectorAll('.open-faq');
+    if (!wrap) return;
+
+    function openFaq() {
+      wrap.style.display = 'block';
+      wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    function closeFaq() {
+      wrap.style.display = 'none';
+      const firstOpenBtn = document.querySelector('.open-faq');
+      if (firstOpenBtn) { firstOpenBtn.focus(); }
+    }
+
+    openBtns.forEach(function (btn) {
+      btn.addEventListener('click', function (e) { e.preventDefault(); openFaq(); });
+    });
+
+    if (btnClose) btnClose.addEventListener('click', function (e) { e.preventDefault(); closeFaq(); });
+
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape' && wrap.style.display !== 'none') closeFaq();
+    });
+  });
+</script>
+</body>
+</html>
